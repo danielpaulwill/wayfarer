@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 
 function ChooseYourAdventurer() {
-  const [adventurerName, setAdventurerName] = useState(" ")
-  const [adventurerCharacter, setAdventurerCharacter] = useState(<p className="characterPlaceholder">XXX</p>)
+  const [adventurerName, setAdventurerName] = useState("...")
+  const [adventurerCharacter, setAdventurerCharacter] = useState("XXX")
   
-  console.log(adventurerCharacter)
-
   function handleOnChange(e) {
     setAdventurerName(e.target.value)
   }
 
   function handleOnClick(e) {
-    setAdventurerCharacter(e.target)
+    console.log(e.target.value)
   }
 
   return (
@@ -24,10 +22,10 @@ function ChooseYourAdventurer() {
         onChange={handleOnChange}
         ></input>
         <p className="characterPlaceholder" onClick={handleOnClick}>X</p>
-        <p className="characterPlaceholder" onClick={handleOnClick}>Y</p>
+        <p className="characterPlaceholder" onClick={handleOnClick} value="Y" >Y</p>
         <h2>Your Adventurer</h2>
         <h3>{adventurerName}</h3>
-        {/* {adventurerCharacter} */}
+        <p id="chosenCharacter" >{adventurerCharacter}</p>
     </div>
   )
 };

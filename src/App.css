@@ -3,13 +3,41 @@ html {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.standard {
+#welcome {
   color: #FFF;
   margin: auto auto;
   width: 50%;
   padding: 10px;
   text-align: center;
   padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+#chooseYourAdventurer {
+  color: #FFF;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+  /* padding-top: 100px; */
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+#chosenCharacter {
+  height: 200px;
+  width: 200px;
+  color: #FFF;
+  text-align: center;
+  border: 3px solid #FFF;
+  display: block;
+  margin: auto;
+}
+
+.center {
+margin: auto;
 }
 
 .textInput {
@@ -18,8 +46,8 @@ html {
   border: 3px solid #FFF;
   padding: 10px;
   font-family: 'Courier New', Courier, monospace;
-  margin: 50px 0 0 0;
-  width: 200px;
+  margin: 10px auto;
+  width: 250px;
 }
 
 .button {
@@ -28,7 +56,12 @@ html {
   border: 3px solid #FFF;
   padding: 10px;
   font-family: 'Courier New', Courier, monospace;
-  margin: 50px 0 0 0;
+  /* margin: 50px 0 0 0; */
+  width: 300px;
+  /* margin: auto; */
+  /* margin-top: 75px; */
+  margin: 15px;
+  cursor: pointer;
 }
 
 .characterPlaceholder {
@@ -36,17 +69,6 @@ html {
   width: 200px;
   color: #FFF;
   float: left;
-  text-align: center;
   border: 3px solid #FFF;
-}
-
-#chosenCharacter {
-  height: 200px;
-  width: 200px;
-  color: #FFF;
-  background-color: red;
-  text-align: center;
-  border: 3px solid #FFF;
-  display: block;
-  margin: auto;
+  margin-top: 20px;
 }

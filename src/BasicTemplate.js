@@ -1,6 +1,6 @@
 import React from "react";
 
-function Template() {
+function BasicTemplate() {
 
   return (
     <div>
@@ -9,4 +9,4 @@ function Template() {
   )
 };
 
-export default Template;
+export default BasicTemplate;

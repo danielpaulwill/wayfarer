@@ -72,3 +72,89 @@ margin: auto;
   border: 3px solid #FFF;
   margin-top: 20px;
 }
+
+.adventurePage {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.adventureMain {
+  color: #FFF;
+  width: 50%;
+  height: 95vh;
+  text-align: center;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+}
+
+.sidebarAvatar {
+  width: 25%;
+  height: 95vh;
+  color: #FFF;
+  text-align: center;
+  padding-top: 20px;
+  /* background-color: blue; */
+  border-right: solid #FFF;
+
+}
+
+.sidebarStats {
+  text-align: left;
+  margin-left: 15%;
+  margin-right: 50px;
+}
+
+.adventureChoices {
+  /* background-color: pink; */
+  height: 70%;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.choiceButton {
+  color: #FFF;
+  background-color: #000;
+  border: 3px solid #FFF;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  /* margin: 50px 0 0 0; */
+  width: 300px;
+  /* margin: auto; */
+  /* margin-top: 75px; */
+  margin: 15px;
+  cursor: pointer;
+}
+
+.choiceButton:hover {
+  color: #000;
+  background-color: #FFF;
+}
+
+#healthBar {
+  background-color: red;
+  height: 5px;
+  margin-bottom: 30px;
+}
+
+#attackBar {
+  background-color: orange;
+  height: 5px;
+  margin-bottom: 30px;
+}
+
+#defenseBar {
+  background-color: green;
+  height: 5px;
+  margin-bottom: 30px;
+}
+
+#luckBar {
+  background-color: yellow;
+  height: 5px;
+  margin-bottom: 30px;
+}

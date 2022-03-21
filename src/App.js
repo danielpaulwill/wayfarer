@@ -13,6 +13,8 @@ function App() {
   const [defense, setDefense] = useState(30)
   const [luck, setLuck] = useState(30)
 
+  window.onbeforeunload = function() { return "Your work will be lost."; };
+
   function handleNameChange(e) {
     setCharacterName(e.target.value.toUpperCase())
   }
@@ -22,15 +24,17 @@ function App() {
   }
 
   function handleDecrementHealth() {
+    if (health > 4)
     setHealth(health => health - 5)
   }
 
   function handleIncrementDefense() {
+    if (defense < 96)
     setDefense(defense => defense + 5)
   }
 
   function handleRandomizeLuck() {
-    setLuck(luck => Math.floor(Math.random() * 100))
+    setLuck(Math.floor(Math.random() * 100))
   }
 
   return (

@@ -1,6 +1,6 @@
 import { NavLink} from "react-router-dom"
 
-function OneOneOptOneResult() {
+function OneOneOptOneResult({ onClick }) {
 
   return (
     <div>
@@ -8,9 +8,9 @@ function OneOneOptOneResult() {
         <div className="adventureChoices">
           <p>You have learned nothing. Please try again.</p>
           <br></br>
-          <NavLink to="/adventure/1-1 ">
-          <button className="choiceButton">Go Back</button>
-          </NavLink>
+          {/* <NavLink to="/adventure/1-1 "> */}
+          <button className="choiceButton" onClick={onClick}>Go Back</button>
+          {/* </NavLink> */}
         </div>
     </div>
   )

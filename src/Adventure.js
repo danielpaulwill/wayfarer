@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import OneOneChoices from "./Stage 1/OneOneChoices";
@@ -6,6 +6,11 @@ import OneOneOptOneResult from "./Stage 1/OneOneOptOneResult";
 import OneTwoChoices from "./Stage 1/OneTwoChoices";
 
 function Adventure({ name, avatar, health, attack, defense, luck }) {
+  const [optOne, setOptOne] = useState(true)
+
+  function handleClick() {
+    setOptOne(optOne => !optOne)
+  }
 
   return (
     <div className="adventurePage">
@@ -17,11 +22,10 @@ function Adventure({ name, avatar, health, attack, defense, luck }) {
         defense={defense}
         luck={luck} />
       <div className="adventureMain">
-        <Route exact path="adventure/1-1-1">
-          <OneOneOptOneResult />
+        <Route path="/adventure/1-1">
+          {optOne ? <OneOneChoices onClick={handleClick} /> : <OneOneOptOneResult onClick={handleClick} />}
         </Route>
-        <Route exact path="/adventure/1-1">
-          <OneOneChoices />
+        <Route path="adventure/1-x">
         </Route>
         <Route path="/adventure/1-2">
           <OneTwoChoices />

@@ -1,6 +1,6 @@
 import React from "react";
 
-function OneTwoChoices() {
+function OneTwoChoices({ decrementHealth, incrementDefense, randomizeLuck }) {
 
   return (
     <div>
@@ -8,9 +8,9 @@ function OneTwoChoices() {
         <div className="adventureChoices">
           <p>If you had three choices, which one would you choose?</p>
           <br></br>
-          <button className="choiceButton">Choice 1</button>
-          <button className="choiceButton">Choice 2</button>
-          <button className="choiceButton">Choice 3</button>
+          <button className="choiceButton" onClick={decrementHealth}>Decrement Health</button>
+          <button className="choiceButton" onClick={incrementDefense}>Increment Defense</button>
+          <button className="choiceButton" onClick={randomizeLuck} >Randomize Luck</button>
         </div>
     </div>
   )

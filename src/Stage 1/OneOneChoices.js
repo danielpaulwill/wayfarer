@@ -12,13 +12,13 @@ function OneOneChoices() {
           <NavLink to="/adventure/1-1-1">
           <button className="choiceButton">Choice 1</button>
           </NavLink>
-          <NavLink to="/adventure/1-2">
+          <NavLink to="/adventure/1-1-2">
           <button className="choiceButton">Choice 2</button>
           </NavLink>
-          <NavLink to="/adventure/1-2">
+          <NavLink to="/adventure/1-1-2">
           <button className="choiceButton">Choice 3</button>
           </NavLink>
-          <NavLink to="/adventure/1-2">
+          <NavLink to="/adventure/1-1-2">
           <button className="choiceButton">Choice 4</button>
           </NavLink>
         </div>

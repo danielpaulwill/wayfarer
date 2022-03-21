@@ -21,6 +21,18 @@ function App() {
     setCharacterAvatar(e.target.src)
   }
 
+  function handleDecrementHealth() {
+    setHealth(health => health - 5)
+  }
+
+  function handleIncrementDefense() {
+    setDefense(defense => defense + 5)
+  }
+
+  function handleRandomizeLuck() {
+    setLuck(luck => Math.floor(Math.random() * 100))
+  }
+
   return (
     <div>
       <Route path="/setup">
@@ -37,7 +49,10 @@ function App() {
           health={health}
           attack={attack}
           defense={defense}
-          luck={luck} />
+          luck={luck}
+          decrementHealth={handleDecrementHealth}
+          incrementDefense={handleIncrementDefense}
+          randomizeLuck={handleRandomizeLuck} />
       </Route>
       <Route exact path="/">
         <Welcome />

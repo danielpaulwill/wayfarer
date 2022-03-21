@@ -8,7 +8,7 @@ function Welcome({ handleClick }) {
     <div id="welcome">
       <h2>Welcome to Wayfarer</h2>
       <NavLink to="/setup">
-        <button className="button" onClick={handleClick}>Click me to begin!</button>
+        <button id="welcomeButton" onClick={handleClick}>Click me to begin!</button>
       </NavLink>
     </div>
   )

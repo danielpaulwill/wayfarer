@@ -3,9 +3,10 @@ import { Route } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import OneOneChoices from "./Stage 1/OneOneChoices";
 import OneOneOptOneResult from "./Stage 1/OneOneOptOneResult";
+import OneOneOptTwoResult from "./Stage 1/OneOneOptTwoResult";
 import OneTwoChoices from "./Stage 1/OneTwoChoices";
 
-function Adventure({ name, avatar, health, attack, defense, luck }) {
+function Adventure({ name, avatar, health, attack, defense, luck, decrementHealth, incrementDefense, randomizeLuck }) {
   const [optOne, setOptOne] = useState(true)
 
   function handleClick() {
@@ -23,13 +24,16 @@ function Adventure({ name, avatar, health, attack, defense, luck }) {
         luck={luck} />
       <div className="adventureMain">
         <Route path="/adventure/1-2">
-          <OneTwoChoices />
+          <OneTwoChoices decrementHealth={decrementHealth} incrementDefense={incrementDefense} randomizeLuck={randomizeLuck} />
         </Route>
         <Route path="/adventure/1-1">
           <OneOneChoices />
         </Route>
         <Route path="/adventure/1-1-1">
           <OneOneOptOneResult />
+        </Route>
+        <Route path="/adventure/1-1-2">
+          <OneOneOptTwoResult />
         </Route>
       </div>
     </div>

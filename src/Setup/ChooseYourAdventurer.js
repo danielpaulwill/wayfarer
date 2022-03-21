@@ -22,7 +22,7 @@ function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick }) {
           <h2 style={name === "..." ? {color: "black"} : {color: "white"}}>{name}</h2>
           <img id="chosenCharacter" alt="pick your adventurer" src={avatar}></img>
           <NavLink to="/adventure/1-1">
-            <button className="button">Confirm your adventurer</button>
+            <button id="chooseAdventureButton">Confirm your adventurer</button>
           </NavLink>
         </div>
     </div>

@@ -1,5 +1,9 @@
 import React from "react";
+import { Route } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import OneOneChoices from "./Stage 1/OneOneChoices";
+import OneOneOptOneResult from "./Stage 1/OneOneOptOneResult";
+import OneTwoChoices from "./Stage 1/OneTwoChoices";
 
 function Adventure({ name, avatar, health, attack, defense, luck }) {
 
@@ -13,15 +17,15 @@ function Adventure({ name, avatar, health, attack, defense, luck }) {
         defense={defense}
         luck={luck} />
       <div className="adventureMain">
-        <h1>Stage 1-1</h1>
-        <div className="adventureChoices">
-          <p>If you had four choices, which one would you choose?</p>
-          <br></br>
-          <button className="choiceButton">Choice 1</button>
-          <button className="choiceButton">Choice 2</button>
-          <button className="choiceButton">Choice 3</button>
-          <button className="choiceButton">Choice 4</button>
-        </div>
+        <Route exact path="adventure/1-1-1">
+          <OneOneOptOneResult />
+        </Route>
+        <Route exact path="/adventure/1-1">
+          <OneOneChoices />
+        </Route>
+        <Route path="/adventure/1-2">
+          <OneTwoChoices />
+        </Route>
       </div>
     </div>
   )

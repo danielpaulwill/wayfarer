@@ -27,7 +27,7 @@ function App() {
         <ChooseYourAdventurer
           name={characterName}
           handleOnChange={handleNameChange}
-          character={characterAvatar}
+          avatar={characterAvatar}
           handleOnClick={handleAvatarChange} />
       </Route>
       <Route path="/adventure">

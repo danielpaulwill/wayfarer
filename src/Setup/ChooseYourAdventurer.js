@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function ChooseYourAdventurer({ name, character, handleOnChange, handleOnClick }) {
+function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick }) {
   
   return (
     <div id="chooseYourAdventurer">
@@ -20,8 +20,8 @@ function ChooseYourAdventurer({ name, character, handleOnChange, handleOnClick }
         <div className="center">
           <h3>Your Adventurer</h3>
           <h2 style={name === "..." ? {color: "black"} : {color: "white"}}>{name}</h2>
-          <img id="chosenCharacter" alt="pick your adventurer" src={character}></img>
-          <NavLink to="/adventure">
+          <img id="chosenCharacter" alt="pick your adventurer" src={avatar}></img>
+          <NavLink to="/adventure/1-1">
             <button className="button">Confirm your adventurer</button>
           </NavLink>
         </div>

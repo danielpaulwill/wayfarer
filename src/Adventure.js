@@ -22,13 +22,14 @@ function Adventure({ name, avatar, health, attack, defense, luck }) {
         defense={defense}
         luck={luck} />
       <div className="adventureMain">
-        <Route path="/adventure/1-1">
-          {optOne ? <OneOneChoices onClick={handleClick} /> : <OneOneOptOneResult onClick={handleClick} />}
-        </Route>
-        <Route path="adventure/1-x">
-        </Route>
         <Route path="/adventure/1-2">
           <OneTwoChoices />
+        </Route>
+        <Route path="/adventure/1-1">
+          <OneOneChoices />
+        </Route>
+        <Route path="/adventure/1-1-1">
+          <OneOneOptOneResult />
         </Route>
       </div>
     </div>

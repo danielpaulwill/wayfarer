@@ -58,7 +58,13 @@ margin: auto;
   font-family: 'Courier New', Courier, monospace;
   width: 300px;
   margin-top: 75px;
+  margin-bottom: 75px;
   cursor: pointer;
+}
+
+#welcomeButton:hover {
+  color: #000;
+  background-color: #FFF;
 }
 
 #chooseAdventureButton {
@@ -165,4 +171,20 @@ margin: auto;
   background-color: yellow;
   height: 5px;
   margin-bottom: 30px;
+}
+
+#welcomeHealth {
+  border: solid red 3px;
+}
+
+#welcomeAttack {
+  border: solid orange 3px;
+}
+
+#welcomeDefense {
+  border: solid green 3px;
+}
+
+#welcomeLuck {
+  border: solid yellow 3px;
 }

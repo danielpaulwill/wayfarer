@@ -6,11 +6,11 @@ import OneOneOptOneResult from "./Stage 1/OneOneOptOneResult";
 import OneOneOptTwoResult from "./Stage 1/OneOneOptTwoResult";
 import OneTwoChoices from "./Stage 1/OneTwoChoices";
 
-function Adventure({ name, avatar, health, attack, defense, luck, decrementHealth, incrementDefense, randomizeLuck }) {
-  const [optOne, setOptOne] = useState(true)
+function Adventure({ name, avatar, health, attack, defense, luck, decrementHealth, incrementDefense, randomizeLuck, choicesPage, handleNextPage }) {
+  const [optOneIsVisible, setOptOneIsVisible] = useState(true)
 
-  function handleClick() {
-    setOptOne(optOne => !optOne)
+  function handleOptOneClick() {
+    setOptOneIsVisible(optOneIsVisible => !optOneIsVisible)
   }
 
   return (
@@ -23,11 +23,12 @@ function Adventure({ name, avatar, health, attack, defense, luck, decrementHealt
         defense={defense}
         luck={luck} />
       <div className="adventureMain">
+        {/* {choicesPage} */}
         <Route path="/adventure/1-2">
           <OneTwoChoices decrementHealth={decrementHealth} incrementDefense={incrementDefense} randomizeLuck={randomizeLuck} />
         </Route>
         <Route path="/adventure/1-1">
-          <OneOneChoices />
+          <OneOneChoices optOneIsVisible={optOneIsVisible} handleOptOneClick={handleOptOneClick} />
         </Route>
         <Route path="/adventure/1-1-1">
           <OneOneOptOneResult />

@@ -3,20 +3,23 @@ import './App.css';
 import Welcome from "./Setup/Welcome";
 import ChooseYourAdventurer from "./Setup/ChooseYourAdventurer";
 import Adventure from "./Adventure";
+import OneOneChoices from "./Stage 1/OneOneChoices";
+import OneOneOptOneResult from "./Stage 1/OneOneOptOneResult";
 import { Route } from "react-router-dom";
 
 function App() {
-  const blankAvatar = "https://lh3.googleusercontent.com/Zggtwo5oN4pPUxlzvZNP8aK1OWgTpjBLq7p4w5kckO4Hpi-ccknzqIoJu8tY2atwaXxBmH82KKrvqa5I6uxcHwcP3yC40YX0JPSfuv4X1iZHZSuanBtQQLRatHOKmNoV5lQRyKz04YpeQU2UsoFBowX5rZQC1m_VJCUHoRsiMPuiVDWAi485N0pvGIFhJ2_f-AV5xc9YPWW3aBxgVIcKJ_52sClXmBPJq2M1D_BdLi7qJY7DWl0ng5HJAtRRJDOmGO0SW7GDq3ku3bpHV6Bh7nUJ95d5XH3hEVCYdO4m-dbbl4Tm_KPIZbWCH6x95CANPtThrUtlaprhpaNINtfsliPNvOX4nkROQwE1-rUNAmHnwMB5Qbgs4jKFRvtbxHVxchjG8o1oy0E1liZ7pLiRXjXySuOHUz5npGfOBsQbPtoEHO_lybDSewe6yqZjA6mcLlHlshPdBwU7oqji1pxgraijsx83A_ccRDF6vMOFNBfzjiYFApb5u2B98nWYUJ4cSf7gCX61O3x6_UpMyOF0Sl3jbb_NnITxpDZmPF_ZzV0_0y2j73z4Vke-Xdiqtltl597julQdMHEsrWpZymytqTSk7mT6GgnVIPZJh5Q_MVe-cckWhQhk4wliWYffHg1i2g1ik2O1HtxXSVDAq8VHkKol370LtcwAfqG0tJGKIY72Ogw9NhQIW-smE2Dg4xQ7Hg15hm4VTitA2ebNSI4wxwRaGdFOM6K1rVPoj_7sSvulNr016H-RZbzb5pm2kiHFUmlMzmWqzm1jw9nb0tFnGUxP17bznbsJjp6l6AnVGncdEzWvgD3yQTlLXkj4TKDNYRuoAw=s180-no?authuser=0"
-  const maleAvatar = "https://lh3.googleusercontent.com/kwZZEcOh1ZDxLAFOlld-Xn_yZyjiRyxMIaivIhzJqBOZj0UYGoLf8GFzbEm-IMboSwJ-rOcdDK3FjkYTcOuNHrljZyVor4fa4MiE1w42C6zckkUX0xzUjLT7mbgFMo28WB3PkQUBnw0UczPmL9u40r77RqEhXX8GsrGkJ4Wh3QAKRGFOq5FrEJsozcsfFV-9O7Woxq2EqSGhzYTD1wrZaM9Sn5zxTcEs3eWE9c1mk3YmZAnSF5_irxtWVi2l0FG0tbOPUwieMk5OgjqopNf_dcNUYcO5IBKeCsYuyOckoOokWg5YqO8e_Ij7un_v7-uu7gVQCVBS4z1P9M0Kjdgjt9XsSeRBX8ndKOZuZh3b4IOmQbjjaO8KT0CM43HlAEErJVjDqblH-Gb6diMSpUgpXeBdTJEpuPQUDRNxhahjWptQxIPM1NdBFn5KFzvE-vF-Xbp3SK6OhR5mwTLQomZ9dHtxV8fGZUamiVb2CI8G-eBdGP1GAq1NGKBIGku8-Dv_lr2V_agmOOvapfGk_8hKDu6tDzrM7117tu766KTXOaxaWkGPeWDHAqwB-t9oZg56yMr04hVVnY58VClLuq0Qw6macMzoiBKdC-Rwin8dM0wc_FLWpwNyp-5yEr50RwxWYLbI015qONLbUAB3ObxiPu_ioq38Gf2rpKm2-Y1JGzhZsHhFPTiW3ndMFZHnogAtO7Ycci6O12-f46daowlAys7ZeQ-OZLFHchzeL5c8fbqaLUYQU2hGB4pijR2EOZ7m2GCGlnl-3fwqzAwtXlF42cRpxEVHXRIDsIsP1icv4SPTYFy9afqYYy1E-KtQV2Avjugl1A=s180-no?authuser=0"
-  const femaleAvatar = "https://lh3.googleusercontent.com/1q8C94UBNn3-mb1v6BqlhkFcW096u_udWWougGjK4DRXdtGehNnoy8akYa9B7SZCtMEu8e_dSfrJ6b07H36mU6V1TmCajC-XKdjr917ZNAKkrkpG8LL6DVNAAcbRoaLq7gUzfvjuVTQA_BgDs6IIj1qOLxfXA8i1a9AQGLeKP4YMaZfVVEB_mE5XAFXQIhnYZQgFoDVHygHJsS_bmp3bzgBhnYB924HsjoIHsmQtzHXyW1bl9jkc-H903AYkWZafUo6GNnAbSA5FJn-nw2mCodLgi0sgtr9GRV8yXWnq4gCzQYz9pQLpSOs5FzMu3CG3C7oQsKk0Rt2tswlQ7RAfkLdAXID761KDkQZckn5IpbXdgK8zS6cM_WH2X8lk5v6UUWFqHiAN5hPR8_LU0uajeUgj5NUkvWcehElnKUpc7vqSw5kmtxLZJbLlowGNCXNuqvoXW3Bkv3oDql6Yo8J3_NN7iGDxun3Ksx6clgmGDrYBfcMt83a5pfxuI3xgKC2piJcK6rvTp5ELFTgdGLTK6t0rS6Gju0XPyIjw4R6C-fdhjXQG_LPAL8qVYp6P1aPGupE58LntXpDINtnnIyY6KvPAQFORN-fpmPXzYcALuyUh49IivKpBWeIniN0uPiKg7FHMVxuQIUWYtfkp0e175lvMnQA-B9YZCQnzl7GSrSdsfOQo5VbMQmhwf9CcIhAJILMusmfDb-6G6I0v0hq18gdNyuv7qyxuFJl3p-FsPyUb18ovtXPayC8sgirRiTdp-tHLsRGHEPz7oHKbCudiw26Ks-LD8NZlOoK8UVIk3PUGNmkct9WfIAIfneimlllnklf0vg=s180-no?authuser=0"
-  const [characterName, setCharacterName] = useState("...")
+  const blankAvatar = "https://lh3.googleusercontent.com/22lQ3KjcE7RwYT8Dmfs1ZkrquCtXCsqM2JP1yn0CTD2RormJwfA5lV8FUah3R4JpW1lVKk9CGKjDP9MIHfxJBrKUrOeEIBSTtDYAhne4ljl2uMCEHVMD38RbZJ3KqCX4LwEKdfrh4V7PPdcsmLoB8hQ1tCagfyXo7MAw4XikCWcykrrvi_yNVSPy3o1nm-mdjARgfL5t_wD5khECIhPCttfD2SGsfqRNP-Bto4z66penbj7raT61pFcQhagE85nmW-gVlBhcCtEAXdBEdkg2qGsPhAvwWMFxMSuP5aiapMxPSEY2BvLy7hpWrarM14-PwnxFjV1-tJpArcbHH3tMChGlGncPb183TGTj8U0ss_KxRvjAvOma_WUewqqOxpScCduFmS3nZRGTKKq6bjFE07QmW5oaWdVumSWXecQMH1sY-25_IFLVxzgme_7bX0tIGDJ7iYqSxnjQn9XZ6LsMAEuLeU-ODU3LbbZF8Ug5uBoeEdaGGHBKwaASblAcbrCzCS7Yc8MBi6YbPRQuxXZYgHziasmutQnswlRJjFUfomO_UGn-w7UQYHAVbJV8dDsNCpCYaqGH1WvQGOjFKpDBBg2zKVxtq___7SofrPj_tAP3DyfSbOe30EEREPF-t_PMSHXWyoJWTFr-9Jjpy76Ro5Mprb658cLw77y6WewyeZuJMieqmjnRyRQ_KGVl37D92UuLlUKIPhqhcnXOuS99jmya85mP5WrnEijsv3iQmZFGPweSomAWGOABfHe0UMQ7ZI_WFrdrr_5NTpBLZijgOMmz_So2PxuqOgaqHhszHpjp7UitQn_VGoo5gFOYNk9ECPzriA=s180-no?authuser=0"
+  const maleAvatar = "https://lh3.googleusercontent.com/JwMsZ3R2iHSBjWYQWoIgLBXe1M1rxpCxSb5nB3EuGN83peNvNWib68ydPogl-pILdIwAmk2vlXKljdbc90mWWZzj1xWvbv6UeeAv_VtR1WK_KOaKbExB_AKA2sWX2drp6FhkSYzheINFUrZHj3bczzLuqKTHImYnvCHxqp7Rq-p56o4roZT0xocrH2UtlHR-rSe9OIfl0zTNBl_nezwLvga-VxZs7IWLLq2f817YLo5eLLEmK6oypMsr8LIox8ISCO1O0g1C3WaXCxTvVLXOZjrNq7JdACOafqvTdB9H0oYDuTRxZ7fos85sPBHo8om_fHp__FPYVs2MV3aPUpRrNs7PNSIUAnmlV23uOlRcOzwJCJOoa1al54BPT8NQ2zjgSpYKCXp-jwh9YOsHpu8LgBH-S-LLhckjZqCwpG7TPQ-0HPM0Wfm0MluuITOu2TIUop-VctZhEtzxl0A_w3DOsLrolNoOyeFyKFwYEnVa-oeybiRIXp9Fgrkj3ftlj6NqZxzpgc0WcFTy-_xSU-Uu9Xq_7uqlb0g9M3gTD8DrKeoNsvXNJ_cQkqEzZEBFxWjwIyQAx8xQ555pUszC_7o0PSM9kQ_kmubYHEhQsEF9LgxwtxvDTIk_hGIUfinJkvr_RrujwteauGSJU33O3uQUX4UWDthZiyNK3ioCsutCy73qObbXxf6zspp3y41sL7AMulA3Nc8_5xHftSOTsCzdNJR4WxO0PTPazIEkXtQn_BdGuR2JTI-u4GKi1vHDWZ9RuQfUhksnoKV8xMTBjQOCIs1IpO1aF_ynUjeBenc5wKVb9TafECxU4SYtO2jzrfF8C2zL-A=s180-no?authuser=0"
+  const femaleAvatar = "https://lh3.googleusercontent.com/JTgLCFGNgOxQAgtRq7-0huDq0p69bPYNrra_gakGZZSxdctlsXKaALqeB3HW3gU0nSdnCO-3Eu5lvGA_ZEeIouJ6UI8pG8D44c_g14HCjQAa1o-VBhKxHyhcgNqROvzlFJ4qgcuAhkKU7v-d3fS2O5d11WT47S0yoI6qZysDsCkf18tCz9s-H0UXQxvihIjotplXR_bNEufstWB8_JxVcp9iLgxWpsJ2XGYWD5qrDlzWWsoRo6XZ76XRL-2a8zmZPUelNSqneHaWNiKM0aF7OZ1ate48oOz1pWSdnElya7AcLhgdZdfpV1TxKU_twBX-QkpCWqQisq7BlbP7Ijkl_j5H6FlEntidEMc9pL7XU0P7eKJvtPRD70jDBDpVXsL7Y_jAPXH7CouMzp2j1c72YEgKf7QcnRgl_i5l3Ft76bws4Dqhcj-1msUoBpKH8e3f2IsLEqcFboXqQir_IKcfcmzVTkS8TBV2bFgpReEs7cUQBZPkTO7Cd5tFBIe4gJe7LsElfhlypv4X2n7bKbvEPaaZfNRv75fbS1DK2iuPdvUQOkWeD7FSgNWwibVPmRnc4QnGpX5xZeTXpxj94rINPqz8DhXi7noAtbpbXhuvjAjYPhDcnU3K21daAYmIKOKV-Y3WJEgOxm442Ov_zG6_zwjrQsHOfJ4FFGtEwmJkBwQcXHtTM1o8BDMMFwxWG9vNm7Pot6kNR_appTE6Gq4sJfHzEQ8UHuXlPPuMu9MBuZh25O2V9IohLUJMA_aikpS_-SzkmRl67sLh4SeesOu1eJMzKDZYkpPBXAncR6lyzn2J5XzjWSz6bb12fCy-EggMqGZ59g=s180-no?authuser=0"
+  const [characterName, setCharacterName] = useState("*your adventurer's name here")
   const [characterAvatar, setCharacterAvatar] = useState(blankAvatar)
-  const [health, setHealth] = useState(100)
-  const [attack, setAttack] = useState(20)
-  const [defense, setDefense] = useState(30)
-  const [luck, setLuck] = useState(30)
+  const [health, setHealth] = useState(0)
+  const [attack, setAttack] = useState(0)
+  const [defense, setDefense] = useState(0)
+  const [luck, setLuck] = useState(0)
+  const [choicesPage, setChoicesPage] = useState(<OneOneChoices handleNextPage={handleNextPage} />)
 
-  // window.onbeforeunload = function() { return "Your work will be lost."; };
+  window.onbeforeunload = function() { return "Your work will be lost."; };
 
   function handleNameChange(e) {
     setCharacterName(e.target.value.toUpperCase())
@@ -25,8 +28,16 @@ function App() {
   function handleAvatarChange(e) {
     if (e.target.src === maleAvatar) {
       setCharacterAvatar(maleAvatar)
+      setHealth(100)
+      setAttack(35)
+      setDefense(30)
+      setLuck(25)
     } else if (e.target.src === femaleAvatar) {
       setCharacterAvatar(femaleAvatar)
+      setHealth(100)
+      setAttack(20)
+      setDefense(25)
+      setLuck(40)
     }
   }
 
@@ -44,6 +55,14 @@ function App() {
     setLuck(Math.floor(Math.random() * 100))
   }
 
+  function handleNextPage(e) {
+    // e.target.value.forEach(element => console.log(element))
+    // console.log(e.target)
+    // setChoicesPage(<OneOneOptOneResult />)
+    // It looks like the only way to dynamically render the components
+    // is to have a function for every component
+  }
+
   return (
     <div>
       <Route path="/setup">
@@ -53,7 +72,12 @@ function App() {
           avatar={characterAvatar}
           handleOnClick={handleAvatarChange}
           maleAvatar={maleAvatar}
-          femaleAvatar={femaleAvatar} />
+          femaleAvatar={femaleAvatar}
+          health={health}
+          attack={attack}
+          defense={defense}
+          luck={luck}
+          handleNextPage={handleNextPage} />
       </Route>
       <Route path="/adventure">
         <Adventure
@@ -65,7 +89,9 @@ function App() {
           luck={luck}
           decrementHealth={handleDecrementHealth}
           incrementDefense={handleIncrementDefense}
-          randomizeLuck={handleRandomizeLuck} />
+          randomizeLuck={handleRandomizeLuck}
+          choicesPage={choicesPage}
+          handleNextPage={handleNextPage} />
       </Route>
       <Route exact path="/">
         <Welcome />

@@ -1,9 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Sidebar from "../Sidebar";
+import OneOneChoices from "../Stage 1/OneOneChoices";
 
-function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, maleAvatar, femaleAvatar }) {
+function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, maleAvatar, femaleAvatar, health, attack, defense, luck }) {
 
   return (
+    <div className="adventurePage">
+      <Sidebar 
+        name={name}
+        avatar={avatar}
+        health={health}
+        attack={attack}
+        defense={defense}
+        luck={luck} />
       <div id="chooseYourAdventurer">
         <h2>Choose your adventurer</h2>
           <input
@@ -18,14 +28,12 @@ function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, mal
           </div>
           <br></br>
           <div className="center">
-            <h3>Your Adventurer</h3>
-            <h2 style={name === "..." ? {color: "black"} : {color: "white"}}>{name}</h2>
-            <img id="chosenCharacter" alt="pick your adventurer" src={avatar}></img>
             <NavLink to="/adventure/1-1">
               <button id="chooseAdventureButton">Confirm your adventurer</button>
             </NavLink>
           </div>
       </div>
+    </div>
   )
 };
 

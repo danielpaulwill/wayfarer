@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink} from "react-router-dom"
+import OneOneOptOneResult from "./OneOneOptOneResult";
 
-function OneOneChoices() {
+function OneOneChoices({ handleNextPage, handleOptOneClick, optOneIsVisible }) {
 
   return (
     <div>
@@ -10,7 +11,7 @@ function OneOneChoices() {
           <p>If you had four choices, which one would you choose?</p>
           <br></br>
           <NavLink to="/adventure/1-1-1">
-          <button className="choiceButton">Choice 1</button>
+          {optOneIsVisible ? <button className="choiceButton" onClick={handleOptOneClick}>Choice 1</button> : null}
           </NavLink>
           <NavLink to="/adventure/1-1-2">
           <button className="choiceButton">Choice 2</button>

@@ -4,8 +4,8 @@ function Sidebar({ name, avatar, health, attack, defense, luck }) {
 
   return (
     <div className="sidebarAvatar">
-      <h2>{name}</h2>
-      <img src={avatar}></img>
+      <h2 style={name === "..." ? {color: "black"} : {color: "white"}}>{name}</h2>
+      <img src={avatar} referrerPolicy="no-referrer"></img>
       <div className="sidebarStats">
         <h3>Stats</h3>
         <p>Health: {health}</p>

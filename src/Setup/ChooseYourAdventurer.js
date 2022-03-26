@@ -16,16 +16,26 @@ function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, arc
         luck={luck} />
       <div id="chooseYourAdventurer">
         <h2>Choose your adventurer</h2>
+        <p>ENTER NAME BELOW</p>
           <input
           type="text" 
-          placeholder="Enter Your Adventurer's Name" 
+          placeholder="Enter Name Here..." 
           className="textInput"
           onChange={handleOnChange} >
           </input>
           <div className="center">
-            <img className="chooseYourAvatar" onClick={handleOnClick} src={warriorAvatar}></img>
-            <img className="chooseYourAvatar" onClick={handleOnClick} src={archerAvatar}></img>
-            <img className="chooseYourAvatar" onClick={handleOnClick} src={mageAvatar}></img>
+            <div className="chooseYourAvatarContainer">
+              <img className="chooseYourAvatarImg" onClick={handleOnClick} src={warriorAvatar}></img>
+              <p className="chooseYourAvatarLabel">WARRIOR</p>
+            </div>
+            <div className="chooseYourAvatarContainer">
+              <img className="chooseYourAvatarImg" onClick={handleOnClick} src={archerAvatar}></img>
+              <p className="chooseYourAvatarLabel">ARCHER</p>
+            </div>
+            <div className="chooseYourAvatarContainer">
+              <img className="chooseYourAvatarImg" onClick={handleOnClick} src={mageAvatar}></img>
+              <p className="chooseYourAvatarLabel">MAGE</p>
+            </div>
           </div>
           <br></br>
           <div className="center">

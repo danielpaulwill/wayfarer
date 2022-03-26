@@ -1,27 +1,15 @@
-import React from "react";
-import { NavLink} from "react-router-dom"
-import OneOneOptOneResult from "./OneOneOptOneResult";
-
-function OneOneChoices({ handleNextPage, handleOptOneClick, optOneIsVisible }) {
+function OneOneChoices({ onChoiceClick, isVisibleOne }) {
 
   return (
     <div>
-        <h1>Stage 1-1</h1>
+        <h1>OneOneChoices</h1>
         <div className="adventureChoices">
           <p>If you had four choices, which one would you choose?</p>
           <br></br>
-          <NavLink to="/adventure/1-1-1">
-          {optOneIsVisible ? <button className="choiceButton" onClick={handleOptOneClick}>Choice 1</button> : null}
-          </NavLink>
-          <NavLink to="/adventure/1-1-2">
-          <button className="choiceButton">Choice 2</button>
-          </NavLink>
-          <NavLink to="/adventure/1-1-2">
-          <button className="choiceButton">Choice 3</button>
-          </NavLink>
-          <NavLink to="/adventure/1-1-2">
-          <button className="choiceButton">Choice 4</button>
-          </NavLink>
+          {isVisibleOne.current ? <button className="choiceButton" onClick={e => onChoiceClick(1)}>Choice 1</button> : null}
+          <button className="choiceButton" onClick={e => onChoiceClick(2)}>Choice 2</button>
+          <button className="choiceButton" onClick={e => onChoiceClick(3)}>Choice 3</button>
+          <button className="choiceButton" onClick={e => onChoiceClick(4)}>Choice 4</button>
         </div>
     </div>
   )

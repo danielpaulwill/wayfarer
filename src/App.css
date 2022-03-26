@@ -155,7 +155,7 @@ margin: auto;
   margin-bottom: 30px;
 }
 
-#attackBar {
+#strengthBar {
   background-color: orange;
   height: 5px;
   margin-bottom: 30px;
@@ -177,7 +177,7 @@ margin: auto;
   border: solid red 3px;
 }
 
-#welcomeAttack {
+#welcomeStrength {
   border: solid orange 3px;
 }
 

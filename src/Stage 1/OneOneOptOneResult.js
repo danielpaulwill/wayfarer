@@ -1,16 +1,12 @@
-import { NavLink} from "react-router-dom"
-
-function OneOneOptOneResult() {
+function OneOneOptOneResult({ handleGoBack, visibility }) {
 
   return (
     <div>
-        <h1>Stage 1-1</h1>
+        <h1>OneOneOptOneResult</h1>
         <div className="adventureChoices">
           <p>You have learned nothing. Please try again.</p>
           <br></br>
-          <NavLink to="/adventure/1-1">
-          <button className="choiceButton">Go Back</button>
-          </NavLink>
+          <button className="choiceButton" onClick={handleGoBack} >Go Back</button>
         </div>
     </div>
   )

@@ -3,8 +3,6 @@ import './App.css';
 import Welcome from "./Setup/Welcome";
 import ChooseYourAdventurer from "./Setup/ChooseYourAdventurer";
 import Adventure from "./Adventure";
-import OneOneChoices from "./Stage 1/OneOneChoices";
-import OneOneOptOneResult from "./Stage 1/OneOneOptOneResult";
 import { Route } from "react-router-dom";
 
 function App() {
@@ -14,12 +12,11 @@ function App() {
   const [characterName, setCharacterName] = useState("*your adventurer's name here")
   const [characterAvatar, setCharacterAvatar] = useState(blankAvatar)
   const [health, setHealth] = useState(0)
-  const [attack, setAttack] = useState(0)
+  const [strength, setStrength] = useState(0)
   const [defense, setDefense] = useState(0)
   const [luck, setLuck] = useState(0)
-  const [choicesPage, setChoicesPage] = useState(<OneOneChoices handleNextPage={handleNextPage} />)
 
-  window.onbeforeunload = function() { return "Your work will be lost."; };
+  // window.onbeforeunload = function() { return "Your work will be lost."; };
 
   function handleNameChange(e) {
     setCharacterName(e.target.value.toUpperCase())
@@ -29,13 +26,13 @@ function App() {
     if (e.target.src === maleAvatar) {
       setCharacterAvatar(maleAvatar)
       setHealth(100)
-      setAttack(35)
+      setStrength(35)
       setDefense(30)
       setLuck(25)
     } else if (e.target.src === femaleAvatar) {
       setCharacterAvatar(femaleAvatar)
       setHealth(100)
-      setAttack(20)
+      setStrength(20)
       setDefense(25)
       setLuck(40)
     }
@@ -55,14 +52,6 @@ function App() {
     setLuck(Math.floor(Math.random() * 100))
   }
 
-  function handleNextPage(e) {
-    // e.target.value.forEach(element => console.log(element))
-    // console.log(e.target)
-    // setChoicesPage(<OneOneOptOneResult />)
-    // It looks like the only way to dynamically render the components
-    // is to have a function for every component
-  }
-
   return (
     <div>
       <Route path="/setup">
@@ -74,24 +63,21 @@ function App() {
           maleAvatar={maleAvatar}
           femaleAvatar={femaleAvatar}
           health={health}
-          attack={attack}
+          strength={strength}
           defense={defense}
-          luck={luck}
-          handleNextPage={handleNextPage} />
+          luck={luck} />
       </Route>
       <Route path="/adventure">
         <Adventure
           name={characterName}
           avatar={characterAvatar}
           health={health}
-          attack={attack}
+          strength={strength}
           defense={defense}
           luck={luck}
           decrementHealth={handleDecrementHealth}
           incrementDefense={handleIncrementDefense}
-          randomizeLuck={handleRandomizeLuck}
-          choicesPage={choicesPage}
-          handleNextPage={handleNextPage} />
+          randomizeLuck={handleRandomizeLuck} />
       </Route>
       <Route exact path="/">
         <Welcome />

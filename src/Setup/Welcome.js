@@ -15,7 +15,7 @@ function Welcome({ handleClick }) {
         <p>Health is what keeps you alive in the game. When you run out of health, the game will end.</p>
       </div>
       <br></br>
-      <div id="welcomeAttack">
+      <div id="welcomeStrength">
         <h2>Attack</h2>
         <p>Attack is what helps you... "attack" people. Damage dealt to enemies is based off of your attack, their defense, and your dice roll.</p>
       </div>

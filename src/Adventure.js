@@ -1,16 +1,41 @@
-import React, { useState } from "react";
-import { Route } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
 import Sidebar from "./Sidebar";
 import OneOneChoices from "./Stage 1/OneOneChoices";
 import OneOneOptOneResult from "./Stage 1/OneOneOptOneResult";
 import OneOneOptTwoResult from "./Stage 1/OneOneOptTwoResult";
 import OneTwoChoices from "./Stage 1/OneTwoChoices";
 
-function Adventure({ name, avatar, health, attack, defense, luck, decrementHealth, incrementDefense, randomizeLuck, choicesPage, handleNextPage }) {
-  const [optOneIsVisible, setOptOneIsVisible] = useState(true)
+function Adventure({ name, avatar, health, strength, defense, luck, decrementHealth, incrementDefense, randomizeLuck }) {
 
-  function handleOptOneClick() {
-    setOptOneIsVisible(optOneIsVisible => !optOneIsVisible)
+  const isVisibleOne = useRef(true)
+  // const isVisibleTwo = useRef(true) -- another useRef to get rid of a button
+
+  const oneOneChoice = <OneOneChoices onChoiceClick={handleOneOneChoiceClick} isVisibleOne={isVisibleOne} />
+  const [choicesPage, setChoicesPage] = useState(oneOneChoice)
+  
+  const oneOneOneResult = <OneOneOptOneResult handleGoBack={handleOneOneOneGoBack} />
+  const oneOneTwoResult = <OneOneOptTwoResult handleOnToTwo={handleOnToTwo} />
+  const oneOneThreeResult = null
+  const oneOneFourResult = null
+  const oneTwoChoice = <OneTwoChoices decrementHealth={decrementHealth} incrementDefense={incrementDefense} randomizeLuck={randomizeLuck} />
+  
+  function handleOptOneIsVisible() {
+    isVisibleOne.current = false
+  }
+  
+  function handleOneOneChoiceClick(num) {
+    if (num === 1) {
+      handleOptOneIsVisible()
+      setChoicesPage(oneOneOneResult)
+    } else {setChoicesPage(oneOneTwoResult)}
+  }
+
+  function handleOnToTwo() {
+    setChoicesPage(oneTwoChoice)
+    }
+
+  function handleOneOneOneGoBack() {
+    setChoicesPage(oneOneChoice)
   }
 
   return (
@@ -19,23 +44,23 @@ function Adventure({ name, avatar, health, attack, defense, luck, decrementHealt
         name={name}
         avatar={avatar}
         health={health}
-        attack={attack}
+        strength={strength}
         defense={defense}
         luck={luck} />
       <div className="adventureMain">
-        {/* {choicesPage} */}
-        <Route path="/adventure/1-2">
-          <OneTwoChoices decrementHealth={decrementHealth} incrementDefense={incrementDefense} randomizeLuck={randomizeLuck} />
-        </Route>
-        <Route path="/adventure/1-1">
-          <OneOneChoices optOneIsVisible={optOneIsVisible} handleOptOneClick={handleOptOneClick} />
-        </Route>
+        {choicesPage}
+        {/* <Route path="/adventure/1-2"> */}
+          {/* <OneTwoChoices decrementHealth={decrementHealth} incrementDefense={incrementDefense} randomizeLuck={randomizeLuck} /> */}
+        {/* </Route> */}
+        {/* <Route path="/adventure/1-1"> */}
+          {/* <OneOneChoices optOneIsVisible={optOneIsVisible} handleOptOneClick={handleOptOneClick} /> */}
+        {/* </Route>
         <Route path="/adventure/1-1-1">
           <OneOneOptOneResult />
         </Route>
         <Route path="/adventure/1-1-2">
           <OneOneOptTwoResult />
-        </Route>
+        </Route> */}
       </div>
     </div>
   )

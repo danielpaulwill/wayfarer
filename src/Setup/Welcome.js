@@ -16,8 +16,8 @@ function Welcome({ handleClick }) {
       </div>
       <br></br>
       <div id="welcomeStrength">
-        <h2>Attack</h2>
-        <p>Attack is what helps you... "attack" people. Damage dealt to enemies is based off of your attack, their defense, and your dice roll.</p>
+        <h2>Strength</h2>
+        <p>Strength (STR) is how hard you hit something, how much you can carry, and how well you tend to do with strength based skill checks.</p>
       </div>
       <br></br>
       <div id="welcomeDefense">

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import OneOneChoices from "../Stage 1/OneOneChoices";
 
-function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, maleAvatar, femaleAvatar, health, strength, defense, luck }) {
+function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, archerAvatar, mageAvatar, warriorAvatar, health, strength, defense, luck }) {
 
   return (
     <div className="adventurePage">
@@ -23,8 +23,9 @@ function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, mal
           onChange={handleOnChange} >
           </input>
           <div className="center">
-            <img className="characterPlaceholder" onClick={handleOnClick} src={maleAvatar}></img>
-            <img className="characterPlaceholder" onClick={handleOnClick} src={femaleAvatar}></img>
+            <img className="chooseYourAvatar" onClick={handleOnClick} src={warriorAvatar}></img>
+            <img className="chooseYourAvatar" onClick={handleOnClick} src={archerAvatar}></img>
+            <img className="chooseYourAvatar" onClick={handleOnClick} src={mageAvatar}></img>
           </div>
           <br></br>
           <div className="center">

@@ -1,11 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
-function ChooseYourCharacter({ name, avatar, handleOnChange, handleOnClick, archerAvatar, mageAvatar, warriorAvatar, health, strength, defense, luck }) {
+function ChooseYourCharacter({ name, avatar, handleOnChange, handleOnClick, archerAvatar, mageAvatar, warriorAvatar, health, strength, defense, luck, onNextPage }) {
 
   return (
     <div id="chooseYourAdventurer">
-      <h2>Choose your adventurer</h2>
+      <h2>Choose Your Character</h2>
       <p>ENTER NAME BELOW</p>
         <input
         type="text" 
@@ -29,9 +28,9 @@ function ChooseYourCharacter({ name, avatar, handleOnChange, handleOnClick, arch
         </div>
         <br></br>
         <div className="center">
-          <NavLink to="/adventure">
-            <button id="chooseAdventureButton">Confirm your adventurer</button>
-          </NavLink>
+          {/* <NavLink to="/adventure"> */}
+            <button id="chooseAdventureButton" onClick={onNextPage}>Confirm your adventurer</button>
+          {/* </NavLink> */}
         </div>
     </div>
   )

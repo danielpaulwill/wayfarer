@@ -4,7 +4,7 @@ import ItemsList from "./ItemsList"
 function RightSidebar({ currentItems }) {
 
   const items = currentItems.map(item => (
-    <ItemsList item={item}/>
+    <ItemsList key={item.name} item={item}/>
     ))
 
   return (

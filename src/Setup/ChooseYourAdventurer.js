@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Sidebar from "../Sidebar";
+import RightSidebar from "../RightSidebar";
 import OneOneChoices from "../Stage 1/OneOneChoices";
 import ChooseYourCharacter from "./ChooseYourCharacter";
+import ChooseYourItems from "./ChooseYourItems";
 
-
-function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, archerAvatar, mageAvatar, warriorAvatar, health, strength, defense, luck }) {
+function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, archerAvatar, mageAvatar, warriorAvatar, health, strength, defense, luck, currentItems }) {
 
   const chooseYourCharacter = <ChooseYourCharacter 
   name={name}
@@ -18,11 +19,18 @@ function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, arc
   health={health}
   strength={strength}
   defense={defense}
-  luck={luck}/>
+  luck={luck}
+  onNextPage={handleNextPageClick} />
   const [choicesPage, setChoicesPage] = useState(chooseYourCharacter)
   
-  // const oneOneOneResult = <OneOneOptOneResult handleGoBack={handleOneOneOneGoBack} />
-  
+  const chooseYourItems = <ChooseYourItems 
+  archerAvatar={archerAvatar}
+  mageAvatar={mageAvatar}
+  warriorAvatar={warriorAvatar}/>
+
+  function handleNextPageClick() {
+    setChoicesPage(chooseYourItems)
+   }
 
   return (
     <div className="adventurePage">
@@ -34,6 +42,14 @@ function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, arc
         defense={defense}
         luck={luck} />
       {choicesPage}
+      <RightSidebar 
+      name={name}
+      avatar={avatar}
+      health={health}
+      strength={strength}
+      defense={defense}
+      luck={luck}
+      currentItems={currentItems} />
     </div>
   )
 };

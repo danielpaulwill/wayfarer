@@ -105,6 +105,34 @@ justify-content: center;
   font-size: large;
 }
 
+.chooseYourItemContainer {
+  height: 250px;
+  width: 200px;
+  color: #FFF;
+  border: 3px solid #FFF;
+  margin-top: 20px;
+  background-color: red;
+}
+
+.chooseYourItemImg {
+  height: 200px;
+  width: 200px;
+  color: #FFF;
+  margin-top: 10px;
+  float: left;
+  background-color: blue;
+}
+
+.chooseYourItemLabel {
+  width: 200px;
+  color: #FFF;
+  float: left;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: large;
+  background-color: green;
+}
+
 .adventurePage {
   display: flex;
   flex-flow: row wrap;

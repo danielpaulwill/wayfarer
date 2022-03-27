@@ -21,12 +21,15 @@ function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, arc
   defense={defense}
   luck={luck}
   onNextPage={handleNextPageClick} />
-  const [choicesPage, setChoicesPage] = useState(chooseYourCharacter)
-  
+
   const chooseYourItems = <ChooseYourItems 
+  currentItems={currentItems}
   archerAvatar={archerAvatar}
   mageAvatar={mageAvatar}
   warriorAvatar={warriorAvatar}/>
+  
+  const [choicesPage, setChoicesPage] = useState(chooseYourItems)
+  
 
   function handleNextPageClick() {
     setChoicesPage(chooseYourItems)

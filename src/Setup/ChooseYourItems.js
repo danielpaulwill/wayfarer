@@ -1,23 +1,30 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-function ChooseYourItems({ archerAvatar, mageAvatar, warriorAvatar }) {
+function ChooseYourItems({ currentItems }) {
+
+  const items = currentItems.map(item => (
+    <div className="chooseYourItemContainer" key={item.name} onClick={e => console.log(item.name)}>
+      <img className="chooseYourItemImg" src={item.image}></img>
+      <p className="chooseYourItemLabel">{item.name.toUpperCase()}</p>
+    </div>
+    ))
 
   return (
     <div id="chooseYourAdventurer">
       <h1>ChooseYourItems</h1>
+      <p>Choose up to 1 weapon below</p>
+      <div className="itemGroupContainer">
+          {items}
+      </div>
+      <p>Choose up to 3 items below</p>
+      <div className="itemGroupContainer">
+          {items}
+      </div>
       <div className="center">
-          <div className="chooseYourItemContainer">
-            <img className="chooseYourItemImg" src={warriorAvatar}></img>
-            <p className="chooseYourItemLabel">WARRIOR</p>
-          </div>
-          <div className="chooseYourItemContainer">
-            <img className="chooseYourItemImg" src={archerAvatar}></img>
-            <p className="chooseYourItemLabel">ARCHER</p>
-          </div>
-          <div className="chooseYourItemContainer">
-            <img className="chooseYourItemImg" src={mageAvatar}></img>
-            <p className="chooseYourItemLabel">MAGE</p>
-          </div>
+          <NavLink to="/adventure">
+            <button id="chooseAdventureButton">Confirm your items</button>
+          </NavLink>
         </div>
     </div>
   )

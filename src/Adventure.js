@@ -5,6 +5,7 @@ import OneOneChoices from "./Stage 1/OneOneChoices";
 import OneOneOptOneResult from "./Stage 1/OneOneOptOneResult";
 import OneOneOptTwoResult from "./Stage 1/OneOneOptTwoResult";
 import OneTwoChoices from "./Stage 1/OneTwoChoices";
+import ItemInfoSidebar from "./ItemInfoSidebar";
 
 function Adventure({ name, avatar, health, strength, defense, luck, decrementHealth, incrementDefense, randomizeLuck, currentItems }) {
 
@@ -51,14 +52,15 @@ function Adventure({ name, avatar, health, strength, defense, luck, decrementHea
       <div className="adventureMain">
         {choicesPage}
       </div>
-      <RightSidebar 
+      {/* <RightSidebar 
         name={name}
         avatar={avatar}
         health={health}
         strength={strength}
         defense={defense}
         luck={luck}
-        currentItems={currentItems} />
+        currentItems={currentItems} /> */}
+        <ItemInfoSidebar currentItems={currentItems} />
     </div>
   )
 };

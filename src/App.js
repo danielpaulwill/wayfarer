@@ -34,6 +34,7 @@ function App() {
     name: "Potion",
     quantity: 3,
     category: "item",
+    description: "Potions are a one-use item. Some potions can heal your health, others can replenish your magic. Some have lasting effects, others have momentary boosts to your stats.",
     image: "https://lh3.googleusercontent.com/wdOoItFjbjKFUCeASwqOB1_1w1AJA2Qpwyr3Y45GHp1VAVI3Omc0QaNZ1atcTvDlUu-sBefuCAL_0gGju5os5sCzlqVBMo4OekAGhH7Mk2XDIF1kh4MRn0p9C8anTEB4_C9evNAe29uekoUw3BB2XnSWxLSU6TPlJ57uaoSJnwNJ0Kih3BaQ6Rxd0ucWPVSMw8MbSBGSqWSERUlB5f4FWN-jcC-tn8OoOrq0ESKPw4WZYteY-ABQY9zVOfNrB9TKLrX8smWrVQEnDlKNhWk8mnGH_Hpf2QVtv2rOReO8VAO-ZMLQ-tdyYorJ-y8PUSMmggEr4LCbEHtKYdnebDvU3suuurQpBabtYWKLTHFP_f3t6RgROz4S7jgG5a560iOA8bgTZR6RXGHSbQyAn4gmsuC34eLLq_Y7XaJ6kocyeYTvdFW1zK7hqdyJxayPkXtYvHs5nZDWyL96yIu98mlofXUFa1Cclb_1w8-3tTJFch52tW2wJoQdYEf0DkR_vTFT4oswHVn7a8FkHVInLv-chOOvtPJ4xAekpZ5fZ-8KTRqYboNwU0duk_QbE4hB3ikjuOl7fDHwZfwyppx5N8Ywk7IjEXKGlEVUPuyTX1V7KgD_KTFlt3lkjW_lvSqyybP7wDhOBJSZhLilkBgm7viFmJ6F2YIzC_inmL7vuMNjDPohCd4S1uTcWHbgl2kF5gmt_F-Gy9aLB6bWcJ3h3LeWXzmnq9qY-L0_2qMw6LpAHC2KSIvf-DBpECevsCjPGuPoA12pcyMbkjqsdDRUSBq_-Q9Cg7WVJUF0aNgTVyLDz7ac1MaTs8NhJcs7X7HTJ6dKCnS9kw=s296-no?authuser=0"
   }
 

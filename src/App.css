@@ -254,17 +254,38 @@ justify-content: center;
 }
 
 .itemImg {
-  /* background-color: green; */
   max-width: 30px;
   max-height: 30px;
-
-  /* margin: auto 0; */
 }
 
-.text1 {
-  display: block;
+.itemInfoImg {
+  width: 120px;
+  height: 120px;
+  justify-content: center;
 }
 
-.text2 {
-  display: none;
+.sidebarInfo {
+  margin-left: 15%;
+  margin-right: 50px;
+}
+
+.itemInfoArrow {
+  text-align: left;
+  font-size: 40px;
+  margin: 0 auto;
+}
+
+.itemInfoButton {
+  color: #FFF;
+  background-color: #000;
+  border: 2px solid #FFF;
+  padding: 10px 5px;
+  font-family: 'Courier New', Courier, monospace;
+  width: 80px;
+  cursor: pointer;
+}
+
+.itemInfoButton:hover {
+  color: #000;
+  background-color: #FFF;
 }

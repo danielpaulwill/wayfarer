@@ -112,13 +112,13 @@ justify-content: center;
 
 .adventureMain {
   color: #FFF;
-  width: 50%;
+  width: 54%;
   height: 95vh;
   text-align: center;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .sidebarAvatar {
@@ -127,9 +127,7 @@ justify-content: center;
   color: #FFF;
   text-align: center;
   padding-top: 20px;
-  /* background-color: blue; */
   border-right: solid #FFF;
-
 }
 
 .sidebarStats {
@@ -205,4 +203,36 @@ justify-content: center;
 
 #welcomeLuck {
   border: solid yellow 3px;
+}
+
+#rightSidebar {
+  width: 20%;
+  height: 95vh;
+  color: #FFF;
+  text-align: center;
+  padding-top: 20px;
+  border-left: solid #FFF;
+}
+
+.itemList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 30px;
+}
+
+.itemImg {
+  /* background-color: green; */
+  max-width: 30px;
+  max-height: 30px;
+
+  /* margin: auto 0; */
+}
+
+.text1 {
+  display: block;
+}
+
+.text2 {
+  display: none;
 }

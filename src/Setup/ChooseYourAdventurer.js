@@ -8,6 +8,10 @@ import ChooseYourItems from "./ChooseYourItems";
 
 function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, archerAvatar, mageAvatar, warriorAvatar, health, strength, defense, luck, currentItems }) {
 
+  function handleNextPageClick() {
+    setChoicesPage(chooseYourItems)
+  }
+
   const chooseYourCharacter = <ChooseYourCharacter 
   name={name}
   handleOnChange={handleOnChange}
@@ -28,7 +32,7 @@ function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, arc
   mageAvatar={mageAvatar}
   warriorAvatar={warriorAvatar}/>
   
-  const [choicesPage, setChoicesPage] = useState(chooseYourItems)
+  const [choicesPage, setChoicesPage] = useState(chooseYourCharacter)
   
 
   function handleNextPageClick() {

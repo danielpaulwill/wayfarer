@@ -273,6 +273,7 @@ justify-content: center;
   text-align: left;
   font-size: 40px;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .itemInfoButton {

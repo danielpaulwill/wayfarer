@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import OneOneChoices from "../Stage 1/OneOneChoices";
+import ChooseYourCharacter from "./ChooseYourCharacter";
+
 
 function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, archerAvatar, mageAvatar, warriorAvatar, health, strength, defense, luck }) {
+
+  const chooseYourCharacter = <ChooseYourCharacter 
+  name={name}
+  handleOnChange={handleOnChange}
+  avatar={avatar}
+  handleOnClick={handleOnClick}
+  archerAvatar={archerAvatar}
+  mageAvatar={mageAvatar}
+  warriorAvatar={warriorAvatar}
+  health={health}
+  strength={strength}
+  defense={defense}
+  luck={luck}/>
+  const [choicesPage, setChoicesPage] = useState(chooseYourCharacter)
+  
+  // const oneOneOneResult = <OneOneOptOneResult handleGoBack={handleOneOneOneGoBack} />
+  
 
   return (
     <div className="adventurePage">
@@ -14,36 +33,7 @@ function ChooseYourAdventurer({ name, avatar, handleOnChange, handleOnClick, arc
         strength={strength}
         defense={defense}
         luck={luck} />
-      <div id="chooseYourAdventurer">
-        <h2>Choose your adventurer</h2>
-        <p>ENTER NAME BELOW</p>
-          <input
-          type="text" 
-          placeholder="Enter Name Here..." 
-          className="textInput"
-          onChange={handleOnChange} >
-          </input>
-          <div className="center">
-            <div className="chooseYourAvatarContainer">
-              <img className="chooseYourAvatarImg" onClick={handleOnClick} src={warriorAvatar}></img>
-              <p className="chooseYourAvatarLabel">WARRIOR</p>
-            </div>
-            <div className="chooseYourAvatarContainer">
-              <img className="chooseYourAvatarImg" onClick={handleOnClick} src={archerAvatar}></img>
-              <p className="chooseYourAvatarLabel">ARCHER</p>
-            </div>
-            <div className="chooseYourAvatarContainer">
-              <img className="chooseYourAvatarImg" onClick={handleOnClick} src={mageAvatar}></img>
-              <p className="chooseYourAvatarLabel">MAGE</p>
-            </div>
-          </div>
-          <br></br>
-          <div className="center">
-            <NavLink to="/adventure">
-              <button id="chooseAdventureButton">Confirm your adventurer</button>
-            </NavLink>
-          </div>
-      </div>
+      {choicesPage}
     </div>
   )
 };
